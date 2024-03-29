@@ -1,135 +1,152 @@
-@media screen and (max-width:1400px) {
-    .about-containers{
-        flex-wrap: wrap;
-    }
+.invert{
+    filter: invert(1);
+}
+
+.hamburger-icon{
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger{
+    position: fixed;
+    overflow-y: auto;
+    width: 200px;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(18, 18, 62);
+    right: -200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close{
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.close>img{
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.menu ul{
+    list-style: none;
+}
+
+.menu ul li{
+    margin-top: 22px;
+    border: 1px solid blanchedalmond;
+    border-radius: 22px;
+    width: 142px;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 48px;
+}
+
+.menu ul li a:hover{
+    color: rgb(153, 153, 226);
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.socials>img{
+    cursor: pointer;
 }
 
 
-@media screen and (max-width:1200px) {
-    #desktop-nav{
+@media (max-width: 1400px){
+    .right{
         display: none;
     }
 
-    #hamburger-nav{
-        display: flex;
+    .hamburger-icon{
+        display: block;
+        cursor: pointer;
     }
+}
 
-    #experience, .experience-details-container{
-        margin-top: 2rem;
+@media (max-width: 1200px){
+
+    .firstsection{
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 70px;
     }
 
     .section-container{
-        display: block;
-    }
-
-    section, .section-container{
-        height: fit-content;
-    }
-
-    section{
-        margin: 0 5%;
-    }
-
-    .section__pic-container{
-        height: 270px;
-        width: 270px;
-        /* margin-right: 6rem; */
-        
-    }
-
-}
-
-
-@media screen and (max-width: 600px) {
-
-    *{
-        margin: 0;
-        padding: 0;
-    }
-
-    #hamburger-nav{
-        margin-right: 20px;
-    }
-
-    /* skills */
-
-    #skills{
-        margin-top: 0px;
-    }
-
-    /*projects*/
-
-    #projects{
-        margin-top: 0px;
-    }
-
-    .experience-details-container{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
     }
 
+    .about-pic{
+        width: 400px;
+        margin-top: 40px;
+    }
 
     .about-containers{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
     }
-
 
     .position{
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly ;
-        align-items: center;
-    }
-
-    .project-img{
-        width: 100px;
+        justify-content: space-between;
+        gap: 50px;
     }
 
     #resume{
-        width: 100px;
-        height: 100px;
-    }
-
-    .details-container{
-        margin-top: 10px;
-    }
-
-
-    /* contact */
-
-    #contact{
-        margin-top: 140px;
+        max-height: 100px;
     }
 
     .contact-info-upper-container{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        width: 70%;
     }
 
-    .yessss{
-        margin-top: 80px;
+    .contact-info-container a{
+        color: white;
     }
 
-    .no-display{
-        font-size: xx-small;
+    .contact-info-container a:hover{
+        font-size: larger;
+        text-decoration: underline;
     }
 
-    /* footer */
-
-    .nav-links-container ul li{
-        margin: 8px;
+    footer{
+        display: none;
     }
+}
 
-    footer p{
-        font-size: 0.9rem;
-        margin-top: 25px;
+@media (max-width: 300px){
+    #contact{
+        margin-top: 150px;
+        align-items: center;
     }
-
-
 }
