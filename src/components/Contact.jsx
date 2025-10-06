@@ -21,7 +21,7 @@ const Contact = () => {
       icon: FaLinkedin,
       title: 'LinkedIn',
       value: 'Connect with me',
-      link: 'https://www.linkedin.com/in/piyush-kumar-pandey-897ba4299/',
+      link: 'https://www.linkedin.com/in/piyushpandey955/',
       color: '#0A66C2'
     },
     {
