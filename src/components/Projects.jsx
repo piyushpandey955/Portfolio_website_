@@ -14,49 +14,49 @@ const Projects = () => {
       description: 'A comprehensive women safety platform developed for Parul Hackverse. Features real-time location tracking, emergency SOS, and community support network.',
       image: '/assets/safety.png',
       github: 'https://github.com/piyushpandey955/HerShield_Parul_Hackverse',
-      tags: ['React', 'Node.js', 'MongoDB', 'WebSocket']
+      tags: ['Flutter', 'Firebase', 'Google Maps API', 'RAG', 'Geofencing', 'LangChain']
     },
     {
       title: 'LegalEdge AI',
       description: 'AI-powered legal assistance platform that helps users understand legal documents, generate contracts, and get legal advice using advanced NLP models.',
       image: '/assets/docs.png',
       github: 'https://github.com/piyushpandey955/LegalEdge-AI-Project',
-      tags: ['Python', 'AI', 'NLP', 'FastAPI']
+      tags: ['Python', 'AI', 'NLP', 'FastAPI', 'Ollama', 'RAG']
     },
     {
       title: 'DocuVision',
       description: 'Advanced document processing and analysis tool using computer vision and OCR technology for automated data extraction and document management.',
       image: '/assets/docuvision.png',
       github: 'https://github.com/piyushpandey955/DocuVision',
-      tags: ['Python', 'OpenCV', 'OCR', 'Machine Learning']
+      tags: ['Python', 'OpenCV', 'OCR', 'Machine Learning', 'StreamLit']
     },
     {
       title: 'Real-Time Translator',
       description: 'A real-time language translation application with speech recognition and text-to-speech capabilities supporting multiple languages.',
       image: '/assets/project-4.png',
       github: 'https://github.com/piyushpandey955/real-time-translator',
-      tags: ['Python', 'Speech Recognition', 'Translation API', 'TTS']
+      tags: ['Python', 'Speech Recognition', 'Translation API', 'TTS', 'OpenAI Whisper', 'Meta AI NLLB', 'FastAPI']
     },
     {
       title: 'Waste Classifier App',
       description: 'Machine learning application that classifies waste into different categories for efficient recycling.',
       image: '/assets/waste-classifier.png',
       github: 'https://github.com/piyushpandey955/Waste-Classifier',
-      tags: ['Python', 'Machine Learning', 'TensorFlow']
+      tags: ['Python', 'Deep Learning', 'TensorFlow', 'Keras', 'CNN', 'Transfer Learning']
     },
     {
       title: 'Bhagwat Geeta AI Chatbot',
       description: 'AI-powered chatbot that provides wisdom and guidance from the Bhagavad Gita using natural language processing.',
       image: '/assets/chatbot.png',
       github: 'https://github.com/piyushpandey955/Bhagwat-Gita-Chatbot',
-      tags: ['Python', 'AI', 'NLP']
+      tags: ['Python', 'AI', 'NLP', 'RAG', 'Vector DB', 'LangChain']
     },
     {
       title: 'Tkinter COVID Vaccination Project',
       description: 'A desktop application built with Python Tkinter for managing COVID vaccination records and appointments.',
       image: '/assets/project-1.png',
       github: 'https://github.com/piyushpandey955/covid_vaccination_project',
-      tags: ['Python', 'Tkinter', 'SQLite']
+      tags: ['Python', 'Tkinter', 'MySQL']
     },
     {
       title: 'Portfolio Website',
@@ -179,3 +179,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
