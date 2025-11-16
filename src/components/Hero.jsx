@@ -65,8 +65,8 @@ const Hero = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/piyushpandey955', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/piyush-kumar-pandey-897ba4299/', label: 'LinkedIn' },
-    { icon: SiLeetcode, href: 'https://leetcode.com/u/piyush_kumar_pandey/', label: 'LeetCode' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/piyushpandey955/', label: 'LinkedIn' },
+    { icon: SiLeetcode, href: 'https://leetcode.com/u/piyushpandey955/', label: 'LeetCode' },
   ];
 
   return (

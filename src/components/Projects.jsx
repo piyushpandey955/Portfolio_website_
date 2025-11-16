@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaDownload } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
@@ -14,6 +14,7 @@ const Projects = () => {
       description: 'A comprehensive women safety platform developed for Parul Hackverse. Features real-time location tracking, emergency SOS, and community support network.',
       image: '/assets/safety.png',
       github: 'https://github.com/piyushpandey955/HerShield_Parul_Hackverse',
+      downloadApk: '/assets/hershield.apk',
       tags: ['React', 'Node.js', 'MongoDB', 'WebSocket']
     },
     {
@@ -28,6 +29,7 @@ const Projects = () => {
       description: 'Advanced document processing and analysis tool using computer vision and OCR technology for automated data extraction and document management.',
       image: '/assets/docuvision.png',
       github: 'https://github.com/piyushpandey955/DocuVision',
+      liveLink: 'https://docuvision-piyushpandey955-app.streamlit.app/',
       tags: ['Python', 'OpenCV', 'OCR', 'Machine Learning']
     },
     {
@@ -35,6 +37,7 @@ const Projects = () => {
       description: 'A real-time language translation application with speech recognition and text-to-speech capabilities supporting multiple languages.',
       image: '/assets/project-4.png',
       github: 'https://github.com/piyushpandey955/real-time-translator',
+      liveLink: 'https://courageous-cobbler-655b6d.netlify.app/',
       tags: ['Python', 'Speech Recognition', 'Translation API', 'TTS']
     },
     {
@@ -158,6 +161,27 @@ const Projects = () => {
                       <FaGithub />
                       <span>Code</span>
                     </a>
+                    {project.liveLink && (
+                      <a 
+                        href={project.liveLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <FaExternalLinkAlt />
+                        <span>Live</span>
+                      </a>
+                    )}
+                    {project.downloadApk && (
+                      <a 
+                        href={project.downloadApk} 
+                        download
+                        className="project-link"
+                      >
+                        <FaDownload />
+                        <span>APK</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
