@@ -14,7 +14,7 @@ const Projects = () => {
       description: 'A comprehensive women safety platform developed for Parul Hackverse. Features real-time location tracking, emergency SOS, and community support network.',
       image: '/assets/safety.png',
       github: 'https://github.com/piyushpandey955/HerShield_Parul_Hackverse',
-      downloadApk: '/assets/hershield.apk',
+      downloadApk: 'https://drive.google.com/file/d/1UPAx1u4_pHlUscd0D3LN1aj2snMXNITY/view?usp=drive_link',
       tags: ['Flutter', 'Firebase', 'Google Maps API', 'RAG', 'Geofencing', 'LangChain']
     },
     {
