@@ -1,159 +1,185 @@
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import Typed from 'typed.js';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 import './Hero.css';
 
+const HEADLINE = [
+  { text: 'Making AI', accent: false },
+  { text: 'ACCESSIBLE.', accent: true },
+];
+
+const CREDENTIALS = [
+  { dot: true, text: 'Building @ Trilogy Innovations' },
+  { dot: false, text: 'IEEE Published' },
+  { dot: false, text: '1st Place IEEE Mega Project' },
+  { dot: false, text: 'NVIDIA Certified' },
+];
+
+const socials = [
+  { Icon: FaGithub,  href: 'https://github.com/piyushpandey955',                    label: 'GitHub'   },
+  { Icon: FaLinkedin, href: 'https://www.linkedin.com/in/piyushpandey955/',           label: 'LinkedIn' },
+  { Icon: SiLeetcode, href: 'https://leetcode.com/u/piyushpandey955/',                label: 'LeetCode' },
+  { Icon: FaEnvelope, href: 'mailto:piyush7838732397@gmail.com',                      label: 'Email'    },
+];
+
+const clip = {
+  hidden: { clipPath: 'inset(100% 0% 0% 0%)', y: 16 },
+  visible: (d) => ({
+    clipPath: 'inset(0% 0% 0% 0%)',
+    y: 0,
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: d },
+  }),
+};
+
+const fade = (d) => ({
+  hidden: { opacity: 0, y: 18 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: d } },
+});
+
 const Hero = () => {
-  const typedRef = useRef(null);
-
-  useEffect(() => {
-    const typed = new Typed(typedRef.current, {
-      strings: [
-        'Web Developer',
-        'Problem Solver',
-        'Full Stack Developer',
-        'UI/UX Enthusiast'
-      ],
-      typeSpeed: 50,
-      backSpeed: 50,
-      backDelay: 1500,
-      loop: true,
-    });
-
-    return () => typed.destroy();
-  }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        damping: 12,
-        stiffness: 100
-      }
-    }
-  };
-
-  const imageVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        damping: 15,
-        stiffness: 100,
-        delay: 0.5
-      }
-    }
-  };
-
-  const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com/piyushpandey955', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/piyushpandey955/', label: 'LinkedIn' },
-    { icon: SiLeetcode, href: 'https://leetcode.com/u/piyushpandey955/', label: 'LeetCode' },
-  ];
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
+  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero" ref={ref}>
+      <div className="hero-grid-bg" aria-hidden="true" />
+      <div className="hero-glow-1" aria-hidden="true" />
+      <div className="hero-glow-2" aria-hidden="true" />
+
       <div className="hero-container">
-        <motion.div 
-          className="hero-content"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div variants={itemVariants} className="hero-greeting">
-            <span className="wave">👋</span> Hi, I'm
+        {/* ── Left: copy ── */}
+        <div className="hero-copy">
+          {/* Eyebrow */}
+          <motion.div
+            className="hero-eyebrow mono"
+            variants={fade(0)}
+            initial="hidden"
+            animate="visible"
+          >
+            <span className="eyebrow-live">
+              <span className="live-dot" />
+              SDE Intern · Trilogy Innovations
+            </span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="hero-name">
-            Piyush <span className="gradient-text">Kumar Pandey</span>
-          </motion.h1>
+          {/* Headline */}
+          <h1 className="hero-headline" aria-label="Making AI Accessible.">
+            {HEADLINE.map(({ text, accent }, i) => (
+              <span key={text} className="line-wrap">
+                <motion.span
+                  className={`headline-line${accent ? ' accent' : ''}`}
+                  custom={0.1 + i * 0.16}
+                  variants={clip}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {text}
+                </motion.span>
+              </span>
+            ))}
+          </h1>
 
-          <motion.div variants={itemVariants} className="hero-title">
-            <span>I'm a passionate </span>
-            <span ref={typedRef} className="typed-text"></span>
-          </motion.div>
-
-          <motion.p variants={itemVariants} className="hero-description">
-            A Computer Science student passionate about creating beautiful, 
-            functional, and user-friendly web applications.
+          {/* Mission */}
+          <motion.p
+            className="hero-mission"
+            variants={fade(0.5)}
+            initial="hidden"
+            animate="visible"
+          >
+            Building tools the next billion people deserve to have —
+            from on-device AI translation to safety systems to environmental intelligence.
+            One engineer. Infinite ambition.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="hero-buttons">
-            <a href="#contact" className="btn btn-primary">
-              Get In Touch
+          {/* CTAs */}
+          <motion.div
+            className="hero-ctas"
+            variants={fade(0.65)}
+            initial="hidden"
+            animate="visible"
+          >
+            <a href="#journey" className="btn btn-primary">
+              See the Journey <FaArrowDown size={13} />
             </a>
-            <a href="/assets/Piyush Kumar Pandey - Resume01.pdf" download className="btn btn-secondary">
+            <a href="/assets/Piyush_Kumar_Pandey_R05.pdf" download className="btn btn-ghost">
               Download CV
             </a>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="hero-socials">
-            {socialLinks.map((social, index) => (
+          {/* Socials */}
+          <motion.div
+            className="hero-socials"
+            variants={fade(0.78)}
+            initial="hidden"
+            animate="visible"
+          >
+            {socials.map(({ Icon, href, label }) => (
               <motion.a
-                key={index}
-                href={social.href}
-                target="_blank"
+                key={label}
+                href={href}
+                target={href.startsWith('http') ? '_blank' : '_self'}
                 rel="noopener noreferrer"
-                className="social-link"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="social-icon"
+                aria-label={label}
+                whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                aria-label={social.label}
               >
-                <social.icon />
+                <Icon />
               </motion.a>
             ))}
           </motion.div>
-        </motion.div>
 
-        <motion.div 
-          className="hero-image"
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div 
-            className="image-wrapper"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
+          {/* Credentials strip */}
+          <motion.div
+            className="hero-creds"
+            variants={fade(0.92)}
+            initial="hidden"
+            animate="visible"
           >
-            <img src="/assets/bg.png" alt="Piyush" />
-            <div className="image-glow"></div>
+            {CREDENTIALS.map(({ dot, text }, i) => (
+              <span key={text} className="cred-item">
+                {dot ? <span className="cred-live-dot" aria-hidden="true" /> : (i > 0 && <span className="cred-sep" aria-hidden="true">·</span>)}
+                <span className="mono">{text}</span>
+              </span>
+            ))}
           </motion.div>
+        </div>
+
+        {/* ── Right: photo ── */}
+        <motion.div
+          className="hero-photo-wrap"
+          style={{ y: photoY }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
+        >
+          <div className="photo-frame">
+            <img src="/assets/bg.png" alt="Piyush Kumar Pandey" />
+            <div className="photo-ring photo-ring-1" aria-hidden="true" />
+            <div className="photo-ring photo-ring-2" aria-hidden="true" />
+            <div className="photo-glow" aria-hidden="true" />
+          </div>
         </motion.div>
       </div>
 
-      <motion.div 
-        className="scroll-indicator"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
+      {/* Scroll cue */}
+      <motion.a
+        href="#about"
+        className="scroll-cue"
+        aria-label="Scroll down"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6 }}
       >
         <motion.div
-          className="mouse"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
+          animate={{ y: [0, 7, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
         >
-          <div className="wheel"></div>
+          <FaArrowDown size={14} />
         </motion.div>
-      </motion.div>
+      </motion.a>
     </section>
   );
 };

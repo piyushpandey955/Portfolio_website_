@@ -1,76 +1,95 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { 
-  FaHtml5, FaCss3Alt, FaJs, FaPython, FaJava, 
-  FaReact, FaNodeJs, FaDatabase, FaBrain, FaFire,
-  FaChartLine, FaLink, FaRobot, FaNetworkWired
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaPython, FaJava,
+  FaReact, FaNodeJs, FaDatabase, FaBrain,
+  FaRobot, FaNetworkWired, FaAws, FaFire,
 } from 'react-icons/fa';
-import { 
+import {
   SiMongodb, SiMysql, SiFirebase, SiZod,
-  SiGooglegemini, SiLangchain, SiTensorflow
+  SiGooglegemini, SiTailwindcss, SiFastapi,
+  SiTensorflow,
 } from 'react-icons/si';
-import { TbBinaryTree, TbVectorTriangle } from 'react-icons/tb';
+import { TbBinaryTree, TbVectorTriangle, TbBrandTypescript } from 'react-icons/tb';
 import { HiSparkles } from 'react-icons/hi';
 import './Skills.css';
 
 const Skills = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
 
-  const technicalSkills = [
-    { name: 'HTML5', level: 'Experienced', icon: FaHtml5, color: '#E34F26' },
-    { name: 'CSS3', level: 'Experienced', icon: FaCss3Alt, color: '#1572B6' },
-    { name: 'JavaScript', level: 'Intermediate', icon: FaJs, color: '#F7DF1E' },
-    { name: 'Java', level: 'Intermediate', icon: FaJava, color: '#007396' },
-    { name: 'DS & Algorithms', level: 'Intermediate', icon: TbBinaryTree, color: '#FF6B6B' },
-    { name: 'React Js', level: 'Intermediate', icon: FaReact, color: '#61DAFB' },
-    { name: 'Node.js', level: 'Intermediate', icon: FaNodeJs, color: '#339933' },
-    { name: 'ZOD', level: 'Intermediate', icon: SiZod, color: '#3E67B1' },
-    { name: 'MongoDB', level: 'Intermediate', icon: SiMongodb, color: '#47A248' },
-    { name: 'MySQL', level: 'Intermediate', icon: SiMysql, color: '#4479A1' },
-    { name: 'Firebase', level: 'Intermediate', icon: SiFirebase, color: '#FFCA28' },
-    { name: 'Python', level: 'Advanced', icon: FaPython, color: '#3776AB' },
-    { name: 'RAG', level: 'Intermediate', icon: FaNetworkWired, color: '#8B5CF6' },
-    { name: 'Vector DB', level: 'Intermediate', icon: TbVectorTriangle, color: '#EC4899' },
-    { name: 'LangChain', level: 'Intermediate', icon: FaLink, color: '#10B981' },
-    { name: 'LangGraph', level: 'Intermediate', icon: FaChartLine, color: '#3B82F6' },
-    { name: 'Agentic AI', level: 'Intermediate', icon: FaRobot, color: '#F59E0B' },
-    { name: 'Google.GenAI', level: 'Intermediate', icon: SiGooglegemini, color: '#4285F4' },
-    { name: 'Transfer Learning', level: 'Intermediate', icon: FaBrain, color: '#8B5CF6' },
-    { name: 'CNN', level: 'Intermediate', icon: SiTensorflow, color: '#FF6F00' },
+  const skillGroups = [
+    {
+      label: 'AI / Machine Learning',
+      color: '#00d4ff',
+      skills: [
+        { name: 'Deep Learning', icon: FaBrain, color: '#8B5CF6' },
+        { name: 'RAG Pipelines', icon: FaNetworkWired, color: '#00d4ff' },
+        { name: 'LLM Integration', icon: FaRobot, color: '#F59E0B' },
+        { name: 'Agentic AI', icon: HiSparkles, color: '#EC4899' },
+        { name: 'Transfer Learning', icon: FaBrain, color: '#10B981' },
+        { name: 'CNN', icon: SiTensorflow, color: '#FF6F00' },
+        { name: 'LangChain', icon: FaDatabase, color: '#10B981' },
+        { name: 'LangGraph', icon: FaDatabase, color: '#3B82F6' },
+        { name: 'Google.GenAI', icon: SiGooglegemini, color: '#4285F4' },
+        { name: 'Vector DB', icon: TbVectorTriangle, color: '#8B5CF6' },
+        { name: 'TFLite', icon: SiTensorflow, color: '#FF6F00' },
+        { name: 'Pinecone', icon: TbVectorTriangle, color: '#00B488' },
+      ],
+    },
+    {
+      label: 'Cloud & DevOps',
+      color: '#F59E0B',
+      skills: [
+        { name: 'AWS ECS', icon: FaAws, color: '#FF9900' },
+        { name: 'AWS S3', icon: FaAws, color: '#FF9900' },
+        { name: 'AWS Fargate', icon: FaAws, color: '#FF9900' },
+        { name: 'DynamoDB', icon: FaAws, color: '#FF9900' },
+        { name: 'ElasticCache', icon: FaAws, color: '#FF9900' },
+        { name: 'CodeBuild', icon: FaAws, color: '#FF9900' },
+        { name: 'AWS Amplify', icon: FaAws, color: '#FF9900' },
+        { name: 'Firebase', icon: SiFirebase, color: '#FFCA28' },
+      ],
+    },
+    {
+      label: 'Full Stack & Frameworks',
+      color: '#10B981',
+      skills: [
+        { name: 'React', icon: FaReact, color: '#61DAFB' },
+        { name: 'Node.js', icon: FaNodeJs, color: '#339933' },
+        { name: 'FastAPI', icon: SiFastapi, color: '#009688' },
+        { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+        { name: 'MySQL', icon: SiMysql, color: '#4479A1' },
+        { name: 'Zod', icon: SiZod, color: '#3E67B1' },
+        { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
+        { name: 'HTML5', icon: FaHtml5, color: '#E34F26' },
+        { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6' },
+      ],
+    },
+    {
+      label: 'Languages & Core CS',
+      color: '#7c3aed',
+      skills: [
+        { name: 'Python', icon: FaPython, color: '#3776AB' },
+        { name: 'JavaScript', icon: FaJs, color: '#F7DF1E' },
+        { name: 'Java', icon: FaJava, color: '#007396' },
+        { name: 'C', icon: TbBrandTypescript, color: '#A8B9CC' },
+        { name: 'DSA', icon: TbBinaryTree, color: '#FF6B6B' },
+        { name: 'OOPS', icon: FaDatabase, color: '#6366F1' },
+        { name: 'DBMS', icon: FaDatabase, color: '#0EA5E9' },
+        { name: 'OS', icon: FaDatabase, color: '#64748B' },
+      ],
+    },
   ];
 
-  const professionalSkills = [
-    { name: 'Problem Solving', level: 'Advanced', percentage: 90 },
-    { name: 'Teamwork', level: 'Excellent', percentage: 85 },
-    { name: 'Leadership', level: 'Good', percentage: 80 },
-    { name: 'Time Management', level: 'Excellent', percentage: 88 },
-    { name: 'Communication', level: 'Good', percentage: 82 },
-    { name: 'Active Listening', level: 'Excellent', percentage: 87 },
-  ];
-
-  const containerVariants = {
+  const container = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
   };
 
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        damping: 12,
-        stiffness: 100
-      }
-    }
+  const card = {
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { type: 'spring', damping: 14, stiffness: 100 } },
   };
 
   return (
@@ -78,61 +97,44 @@ const Skills = () => {
       <div className="skills-container">
         <motion.div
           className="section-header"
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <p className="section-subtitle">Explore My</p>
+          <span className="section-label mono">// tech stack</span>
           <h2 className="section-title">Skills</h2>
         </motion.div>
 
         <motion.div
-          className="skills-content"
-          variants={containerVariants}
+          className="skills-groups"
+          variants={container}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={isInView ? 'visible' : 'hidden'}
         >
-          <motion.div variants={itemVariants} className="skills-category">
-            <h3 className="category-title">Technical Skills</h3>
-            <div className="technical-skills-grid">
-              {technicalSkills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  className="skill-card"
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <div className="skill-icon" style={{ color: skill.color }}>
-                    <skill.icon />
-                  </div>
-                  <h4>{skill.name}</h4>
-                  <span className="skill-level">{skill.level}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          {skillGroups.map((group) => (
+            <motion.div key={group.label} variants={card} className="skill-group">
+              <div className="group-header">
+                <span className="group-dot" style={{ background: group.color }} />
+                <h3 className="group-label mono">{group.label}</h3>
+              </div>
 
-          <motion.div variants={itemVariants} className="skills-category">
-            <h3 className="category-title">Professional Skills</h3>
-            <div className="professional-skills-list">
-              {professionalSkills.map((skill, index) => (
-                <div key={skill.name} className="skill-item">
-                  <div className="skill-info">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}</span>
-                  </div>
-                  <div className="skill-bar">
-                    <motion.div
-                      className="skill-progress"
-                      initial={{ width: 0 }}
-                      animate={isInView ? { width: `${skill.percentage}%` } : {}}
-                      transition={{ duration: 1, delay: index * 0.1 }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+              <div className="skill-grid">
+                {group.skills.map((skill) => (
+                  <motion.div
+                    key={skill.name}
+                    className="skill-chip"
+                    whileHover={{ scale: 1.05, y: -3 }}
+                    transition={{ type: 'spring', stiffness: 350, damping: 20 }}
+                  >
+                    <span className="chip-icon" style={{ color: skill.color }}>
+                      <skill.icon />
+                    </span>
+                    <span className="chip-name">{skill.name}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

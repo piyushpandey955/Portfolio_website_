@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 * {
   margin: 0;
@@ -6,43 +6,84 @@
   box-sizing: border-box;
 }
 
-/* Theme Variables */
+/* ─── Design Tokens ─── */
 :root[data-theme='dark'] {
-  --bg-color: #0a0a1f;
-  --section-bg: #0f0f2a;
-  --card-bg: #151532;
-  --nav-bg: rgba(21, 21, 50, 0.8);
-  --nav-bg-scrolled: rgba(21, 21, 50, 0.95);
-  --text-color: #ffffff;
-  --text-secondary: #b8b8d4;
-  --primary-color: #8a2be2;
-  --secondary-color: #9370db;
-  --border-color: rgba(138, 43, 226, 0.2);
-  --hover-bg: rgba(138, 43, 226, 0.1);
-  --gradient: linear-gradient(135deg, #8a2be2, #4b0082);
-  --secondary-gradient: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  /* Surfaces */
+  --bg-color: #06080F;
+  --section-bg: #0C1020;
+  --card-bg: #111827;
+  --nav-bg: rgba(6, 8, 15, 0.82);
+  --nav-bg-scrolled: rgba(6, 8, 15, 0.97);
+
+  /* Text */
+  --text-color: #EEE9E0;
+  --text-secondary: #7D8699;
+
+  /* Signature accent — volt-green. Used sparingly on one key word at a time. */
+  --primary-color: #00FF94;
+  --primary-muted: #00CC78;
+
+  /* Gradient terminus */
+  --accent-color: #6D28D9;
+
+  /* Borders */
+  --border-color: rgba(0, 255, 148, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* Hover / fills */
+  --hover-bg: rgba(0, 255, 148, 0.05);
+
+  /* Gradients */
+  --gradient: linear-gradient(135deg, #00FF94, #6D28D9);
+  --secondary-gradient: linear-gradient(135deg, #00CC78, #00A86B);
+
+  /* Tags */
+  --tag-bg: rgba(0, 255, 148, 0.07);
+  --tag-color: #00CC78;
+
+  /* Glow */
+  --glow-color: rgba(0, 255, 148, 0.18);
+  --glow-shadow: 0 0 32px rgba(0, 255, 148, 0.12);
+
+  /* Dot grid */
+  --dot-color: rgba(0, 255, 148, 0.04);
 }
 
 :root[data-theme='light'] {
-  --bg-color: #ffffff;
-  --section-bg: #f8f9fa;
-  --card-bg: #ffffff;
-  --nav-bg: rgba(255, 255, 255, 0.8);
-  --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
-  --text-color: #1a1a2e;
-  --text-secondary: #4a4a6a;
-  --primary-color: #8a2be2;
-  --secondary-color: #9370db;
-  --border-color: rgba(138, 43, 226, 0.15);
-  --hover-bg: rgba(138, 43, 226, 0.05);
-  --gradient: linear-gradient(135deg, #8a2be2, #4b0082);
-  --secondary-gradient: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  --bg-color: #F4F7FA;
+  --section-bg: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --nav-bg: rgba(244, 247, 250, 0.85);
+  --nav-bg-scrolled: rgba(244, 247, 250, 0.97);
+
+  --text-color: #0A0E1A;
+  --text-secondary: #5A6478;
+
+  --primary-color: #007A50;
+  --primary-muted: #00855A;
+
+  --accent-color: #6D28D9;
+
+  --border-color: rgba(0, 122, 80, 0.18);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+
+  --hover-bg: rgba(0, 122, 80, 0.05);
+
+  --gradient: linear-gradient(135deg, #007A50, #6D28D9);
+  --secondary-gradient: linear-gradient(135deg, #00A86B, #007A50);
+
+  --tag-bg: rgba(0, 122, 80, 0.08);
+  --tag-color: #007A50;
+
+  --glow-color: rgba(0, 122, 80, 0.18);
+  --glow-shadow: 0 0 32px rgba(0, 122, 80, 0.12);
+
+  --dot-color: rgba(0, 122, 80, 0.05);
 }
 
+/* ─── Base ─── */
 body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
@@ -52,34 +93,27 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+a { text-decoration: none; color: inherit; }
 
 button {
   font-family: inherit;
   cursor: pointer;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-ul {
-  list-style: none;
-}
-
-/* Remove default button styles */
-button {
   background: none;
   border: none;
   outline: none;
-  font-family: inherit;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+ul { list-style: none; }
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

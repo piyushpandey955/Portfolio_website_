@@ -1,0 +1,321 @@
+.journey {
+  padding: 7rem 2rem;
+  background: var(--bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Section header ── */
+.journey-header {
+  margin-bottom: 5rem;
+}
+
+.journey-title {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--text-color);
+  margin: 0.8rem 0 1.5rem;
+}
+
+.journey-title-accent {
+  color: var(--primary-color);
+}
+
+.journey-intro {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 640px;
+}
+
+/* ── Chapter cards ── */
+.journey-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.chapter {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.chapter:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-color);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+/* Accent left border for the two accent hues */
+.chapter--green::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary-color), transparent);
+  border-radius: 3px 0 0 3px;
+}
+
+.chapter--violet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent-color), transparent);
+  border-radius: 3px 0 0 3px;
+}
+
+/* Ghost chapter number — large, sits in the top-right corner */
+.chapter-ghost {
+  position: absolute;
+  top: -0.5rem;
+  right: 1.2rem;
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: var(--text-color);
+  opacity: 0.03;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.chapter-inner {
+  padding: 2.2rem 2.5rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header row */
+.chapter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
+}
+
+.chapter-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chapter-year {
+  font-size: 0.72rem;
+  color: var(--primary-color);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.chapter-num-label {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.chapter-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chapter-link {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: var(--section-bg);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border: 1px solid var(--border-subtle);
+  transition: all 0.18s ease;
+}
+
+.chapter-link:hover {
+  color: var(--primary-color);
+  border-color: var(--border-color);
+  background: var(--hover-bg);
+}
+
+/* Titles */
+.chapter-title {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-color);
+  line-height: 1.1;
+  margin: 0 0 0.3rem;
+}
+
+.chapter-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  opacity: 0.75;
+}
+
+/* Problem — bold, prominent */
+.chapter-problem {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+  opacity: 0.9;
+}
+
+/* What was built */
+.chapter-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.4rem;
+}
+
+.chapter-what {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* Quote — the founder's voice */
+.chapter-quote {
+  position: relative;
+  margin: 0;
+  padding: 0.9rem 1.2rem;
+  border-left: 3px solid var(--primary-color);
+  background: var(--hover-bg);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.97rem;
+  font-style: italic;
+  color: var(--text-color);
+  line-height: 1.7;
+  opacity: 0.88;
+}
+
+.chapter--violet .chapter-quote {
+  border-left-color: var(--accent-color);
+}
+
+.quote-mark {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.8rem;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--primary-color);
+  opacity: 0.2;
+  font-style: normal;
+}
+
+.chapter--violet .quote-mark {
+  color: var(--accent-color);
+}
+
+/* Impact */
+.chapter-impact {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.impact-label {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-right: 0.2rem;
+}
+
+.chapter--violet .impact-label {
+  color: #a78bfa;
+}
+
+/* Tags */
+.chapter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chapter-tag {
+  font-size: 0.7rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 5px;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  border: 1px solid rgba(0, 255, 148, 0.1);
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+.chapter--violet .chapter-tag {
+  background: rgba(109, 40, 217, 0.08);
+  color: #a78bfa;
+  border-color: rgba(109, 40, 217, 0.15);
+}
+
+.chapter-tag:hover {
+  background: rgba(0, 255, 148, 0.12);
+}
+
+.chapter--violet .chapter-tag:hover {
+  background: rgba(109, 40, 217, 0.14);
+}
+
+/* ── Journey footer ── */
+.journey-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.journey-footer-line {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .journey {
+    padding: 5rem 1.25rem;
+  }
+
+  .chapter-inner {
+    padding: 1.6rem 1.5rem 1.5rem;
+  }
+
+  .chapter-ghost {
+    font-size: 5rem;
+  }
+
+  .journey-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
