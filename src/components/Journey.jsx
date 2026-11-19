@@ -11,11 +11,11 @@ const chapters = [
     subtitle: 'Safety Intelligence for Women',
     problem:
       'In India, millions of women travel through unsafe routes daily — with no system actively watching for risk.',
-    what: 'Real-time threat detection combining YOLOv8 object detection and LSTM-based weapon recognition on live video feeds. Integrated SOS with live location sharing and a city-wide heatmap of high-risk zones.',
-    impact: '95.12% accuracy. IEEE MEGA PROJECT COMPETITION WINNER — 1st place out of all participating university teams.',
+    what: 'A safety score for each area built from crime data, emergency alerts to nearby users, and a RAG chatbot for emergency help.',
+    impact: 'Built for the Parul University hackathon.',
     quote:
       'The real challenge wasn\'t the model. It was building something a scared person could use with one hand in the dark.',
-    tags: ['YOLOv8', 'LSTM', 'Computer Vision', 'Flutter', 'Twilio API', 'Google Maps API'],
+    tags: ['Flutter', 'Google Maps API', 'RAG'],
     github: 'https://github.com/piyushpandey955',
     accentHue: 'green',
   },

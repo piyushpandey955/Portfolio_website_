@@ -11,7 +11,7 @@ const HEADLINE = [
 
 const CREDENTIALS = [
   { dot: true, text: 'Building @ Trilogy Innovations' },
-  { dot: false, text: 'IEEE Published' },
+  { dot: false, text: '2 IEEE Papers' },
   { dot: false, text: '1st Place IEEE Mega Project' },
   { dot: false, text: 'NVIDIA Certified' },
 ];
@@ -60,7 +60,7 @@ const Hero = () => {
           >
             <span className="eyebrow-live">
               <span className="live-dot" />
-              SDE Intern · Trilogy Innovations
+              SDE 1 · Trilogy Innovations
             </span>
           </motion.div>
 
@@ -103,7 +103,7 @@ const Hero = () => {
             <a href="#journey" className="btn btn-primary">
               See the Journey <FaArrowDown size={13} />
             </a>
-            <a href="/assets/Piyush_Kumar_Pandey_R05.pdf" download className="btn btn-ghost">
+            <a href="/assets/Piyush_Kumar_Pandey_Resume.pdf" download className="btn btn-ghost">
               Download CV
             </a>
           </motion.div>

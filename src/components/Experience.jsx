@@ -10,17 +10,31 @@ const Experience = () => {
   const experiences = [
     {
       company: 'Trilogy Innovations',
-      role: 'SDE Intern',
-      duration: 'Jan 2026 – Present',
+      role: 'SDE 1',
+      duration: 'Jun 2026 – Present',
       type: 'current',
       icon: FaBriefcase,
       link: 'https://www.linkedin.com/company/trilogy-innovations/',
       bullets: [
-        'Leading end-to-end development of an intelligent campus surveillance and face recognition system — owning system design, UI/UX, architecture, development, and production deployment on AWS.',
-        'Architecting a full-stack application using Next.js, FastAPI, and AWS (ECS, Amplify, S3, CodeBuild), integrating real-time camera feeds with deep learning–based face recognition pipelines for automated presence tracking and visitor management.',
-        'Sole developer driving requirement analysis, database schema design, RESTful API development, responsive frontend implementation, CI/CD pipeline configuration, and iterative QA.',
+        'Sole engineer of the Live Campus Tracking platform, which turns security cameras into a live map of who is where. Took it from a written idea to 55+ cameras across 3 US campuses in 10 months.',
+        'Raised correct identification of people on camera from about 25% to 78% of their time in view, with a nightly AI system built in 7 days.',
+        'Ended 7,000+ video stream drops a day by moving video processing to GPUs. Built an AI safety check that reviews about 3,300 clips a day, where one model flags and a second confirms before staff get an alert.',
+        'Scaled the platform on AWS from 1 campus to 3, and run it alone with 13 AI agents and 10+ MCP servers.',
       ],
-      tags: ['Next.js', 'FastAPI', 'AWS ECS', 'AWS Amplify', 'Computer Vision', 'Deep Learning', 'CI/CD'],
+      tags: ['LLM Agents', 'MCP', 'Computer Vision', 'FastAPI', 'AWS', 'GPU video'],
+    },
+    {
+      company: 'Trilogy Innovations',
+      role: 'SDE Intern',
+      duration: 'Jan 2026 – Jun 2026',
+      type: 'past',
+      icon: FaBriefcase,
+      link: 'https://www.linkedin.com/company/trilogy-innovations/',
+      bullets: [
+        'Built the first version alone: database, REST APIs (FastAPI), Next.js website, and AWS deployment.',
+        'Connected live camera feeds to face recognition for automatic presence tracking and visitor management.',
+      ],
+      tags: ['Next.js', 'FastAPI', 'AWS', 'CI/CD'],
     },
     {
       company: 'Amity University, Noida',
@@ -30,7 +44,7 @@ const Experience = () => {
       icon: FaFlask,
       link: 'https://ieeexplore.ieee.org/',
       bullets: [
-        'Designed and implemented a custom CNN architecture using transfer learning and multi-head attention to classify biodegradable vs. non-biodegradable waste — 95.12% accuracy on a dataset of 76,000+ labeled images.',
+        'Designed and implemented a custom CNN architecture using transfer learning and multi-head attention to classify biodegradable vs. non-biodegradable waste — 95.19% accuracy on a dataset of 76,000+ labeled images.',
         'Deployed the model to a real-time mobile application using Flutter and TensorFlow Lite, enabling on-device inference for waste classification without internet connectivity.',
         'Published a peer-reviewed research paper in IEEE Xplore detailing the architecture, the dataset, and deployment strategies.',
       ],

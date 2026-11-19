@@ -19,8 +19,8 @@ const About = () => {
 
   const stats = [
     { value: '8.92', label: 'CGPA', sub: 'IMS Engineering' },
-    { value: '1', label: 'IEEE Paper', sub: 'Published' },
-    { value: '95.12%', label: 'Accuracy', sub: 'Waste Classifier CNN' },
+    { value: '2', label: 'IEEE Papers', sub: 'Published' },
+    { value: '95.19%', label: 'Accuracy', sub: 'Waste Classifier CNN' },
     { value: '3×', label: 'Hackathon Wins', sub: 'IEEE, IIT, BugSense' },
   ];
 
@@ -77,7 +77,7 @@ const About = () => {
                 <div className="card-icon"><FaFileDownload /></div>
                 <h3>Resume</h3>
                 <p className="card-label">View Full Profile</p>
-                <a href="/assets/Piyush_Kumar_Pandey_R05.pdf" download>
+                <a href="/assets/Piyush_Kumar_Pandey_Resume.pdf" download>
                   <button className="download-btn">Download CV</button>
                 </a>
               </div>
@@ -85,20 +85,20 @@ const About = () => {
 
             <motion.div variants={item} className="about-text">
               <p>
-                I'm an AI Engineer and full-stack developer currently interning at{' '}
-                <strong>Trilogy Innovations</strong>, where I own the end-to-end development of an
-                intelligent campus surveillance and face recognition system deployed on AWS.
+                I'm an AI Engineer and full-stack developer currently an SDE 1 at{' '}
+                <strong>Trilogy Innovations</strong>, where I am the only engineer on a Live Campus Tracking
+                platform that runs on 55+ cameras across 3 US campuses.
               </p>
               <p>
                 My research at Amity University produced a published{' '}
                 <strong>IEEE paper</strong> on deep learning for waste classification — a custom CNN
-                with multi-head attention achieving <strong>95.12% accuracy</strong> on 76k+ images,
+                with multi-head attention achieving <strong>95.19% accuracy</strong> on 76k+ images,
                 deployed as a mobile app via TensorFlow Lite.
               </p>
               <p>
                 I specialise at the intersection of AI and software engineering: LLM integration,
                 agentic architectures, RAG pipelines, real-time computer vision, and production
-                full-stack systems. Currently pursuing B.Tech CSE (2022–2026) at IMS Engineering College.
+                full-stack systems. B.Tech CSE (2022–2026) from IMS Engineering College, CGPA 8.92.
               </p>
             </motion.div>
 

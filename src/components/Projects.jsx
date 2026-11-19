@@ -9,6 +9,12 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'Live Campus Tracking Platform',
+      description: 'Turns a campus\'s existing security cameras into a live map of who is where. 55+ cameras across 3 US campuses, a nightly AI rebuild that lifts correct identification from about 25% to 78%, and an AI incident check that screens about 3,300 clips a day. Built and run solo at Trilogy Innovations.',
+      image: '/assets/project-2.png',
+      tags: ['LLM Agents', 'Computer Vision', 'FastAPI', 'AWS', 'GPU video', 'MCP'],
+    },
+    {
       title: 'LiveTranslate',
       description: 'Real-time speech translation system using local LLM pipelines — OpenAI Whisper for streaming ASR, Meta NLLB for multilingual translation, and Web Speech API for browser-side processing.',
       image: '/assets/project-4.png',
@@ -41,7 +47,7 @@ const Projects = () => {
     },
     {
       title: 'Waste Classifier App',
-      description: 'Custom CNN with transfer learning and multi-head attention classifying biodegradable vs. non-biodegradable waste — 95.12% accuracy on 76k+ images. Published in IEEE Xplore.',
+      description: 'Custom CNN with transfer learning and multi-head attention classifying biodegradable vs. non-biodegradable waste — 95.19% accuracy on 76k+ images. Published in IEEE Xplore.',
       image: '/assets/waste-classifier.png',
       github: 'https://github.com/piyushpandey955/Waste-Classifier',
       tags: ['Deep Learning', 'TensorFlow', 'CNN', 'Transfer Learning', 'Flutter', 'TFLite'],
@@ -117,15 +123,17 @@ const Projects = () => {
                 <img src={project.image} alt={project.title} />
                 <div className="project-overlay">
                   <div className="project-links">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <FaGithub />
-                      <span>Code</span>
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <FaGithub />
+                        <span>Code</span>
+                      </a>
+                    )}
                     {project.liveLink && (
                       <a
                         href={project.liveLink}
